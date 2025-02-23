@@ -14,6 +14,8 @@ import JoinForm from "./screens/join/JoinForm";
 import JoinComplete from "./screens/join/JoinComplete";
 import SearchStore from "./screens/store/SearchStore";
 import StoreInfo from "./screens/store/StoreInfo";
+import ReservationList from "./screens/reservation/ReservationList";
+import ReservationDetail from "./screens/reservation/ReservationDetail";
 
 const App: React.FC = () => {
   return (
@@ -28,6 +30,8 @@ const App: React.FC = () => {
         <Route path="/resetPw" element={<ResetPw />} />
         <Route path="/searchStore" element={<SearchStore />} />
         <Route path="/storeInfo" element={<StoreInfo />} />
+        <Route path="/reservationList" element={<ReservationList />} />
+        <Route path="/reservationDetail" element={<ReservationDetail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/joinAgree" element={<JoinAgree />} />
         <Route path="/joinForm" element={<JoinForm />} />
