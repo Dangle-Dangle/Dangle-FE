@@ -1,0 +1,108 @@
+.join-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+  font-family: "Suit", sans-serif;
+}
+.join-container input:focus {
+  border-color: #a8caba;
+  box-shadow: 0 0 8px rgba(168, 202, 186, 0.5);
+}
+
+.join-text-wrap {
+  width: 500px;
+}
+
+/* 회원가입 타이틀 */
+.join-title {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+/* 경계선 */
+.join-border-line {
+  border: 1px solid #e3e3e3;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* 약관 안내 문구 */
+.join-text1 {
+  font-weight: 200;
+  font-size: 18px;
+  margin-top: 30px;
+}
+.join-text2 {
+  font-weight: 100;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* 약관 동의란 */
+.join-agree-content {
+  width: 450px;
+  margin-top: 60px;
+}
+.join-agree-content p {
+  font-size: 13px;
+  color: #777;
+}
+
+.join-agree-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: pointer;
+  height: 30px;
+  align-items: center;
+  margin: 0;
+}
+.join-agree-all {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: pointer;
+  height: 30px;
+  align-items: center;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.join-agree-all > .icon-agree-all {
+  width: 25px;
+  height: 25px;
+  margin-left: -4px;
+}
+.join-agree-all > p {
+  margin-left: -310px;
+  color: #000;
+  font-weight: 400;
+  font-size: 15px;
+}
+.agree-check-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex: 3;
+}
+.agree-check-text > p {
+  margin-left: 10px;
+  flex: 10;
+}
+
+/* 구분선 */
+.join-agree-border-line {
+  border: 1px solid #e3e3e3;
+  width: 100%;
+}
+
+/* 버튼 */
+.join-agree-button-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+}
