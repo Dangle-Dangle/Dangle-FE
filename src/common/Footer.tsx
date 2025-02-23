@@ -15,11 +15,13 @@ const Footer: React.FC = () => {
           <BiHome className="home" />
         </Link>
 
-        <Link to={"searchStore"}>
+        <Link to={"/searchStore"}>
           <IoSearchSharp className="search" />
         </Link>
         <BiHeartCircle className="heart" />
-        <FaRegCalendarCheck className="calendar" />
+        <Link to={"/reservationList"}>
+          <FaRegCalendarCheck className="calendar" />
+        </Link>
         <Link to={"/login"}>
           <RiAccountCircleLine className="account" />
         </Link>
