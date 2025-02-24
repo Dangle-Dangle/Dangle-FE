@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 import { LuMapPin, LuClock4 } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 
-interface Store {
+export interface Store {
   no: number;
   name: string;
   rating: number;
@@ -37,6 +37,9 @@ const storeData: Store[] = [
 
 const SearchStore: React.FC = () => {
   const navigation = useNavigate();
+  const handleStoreClick = (store: Store) => {
+    navigation("/storeInfo", { state: { store } });
+  };
   return (
     <div className="search-store-container">
       {/* 선택 및 검색란 */}
@@ -123,7 +126,7 @@ const SearchStore: React.FC = () => {
       {/* 상점박스 */}
       <div className="store-box-container">
         {storeData.map((store) => (
-          <div key={store.no} className="store-box-wrap" onClick={()=>navigation("/storeInfo")}>
+          <div key={store.no} className="store-box-wrap" onClick={() => handleStoreClick(store)}>
             <p className="store-name">{store.name}</p>
             <div className="store-review-icon">
               <img src="./image/star.jpg" />

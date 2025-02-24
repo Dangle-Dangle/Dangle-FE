@@ -4,8 +4,9 @@ import Slider from "react-slick";
 import { IoIosArrowBack } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaRegCheckCircle, FaRegCircle, FaStar, FaStarHalf, FaRegStar } from "react-icons/fa";
-
 import Button from "../../components/Button";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Store } from "./SearchStore";
 
 interface StoreImage {
   no: number;
@@ -14,8 +15,8 @@ interface StoreImage {
 
 const imageData: StoreImage[] = [
   { no: 1, imageUrl: "/image/store6-1.jpg" },
-  { no: 1, imageUrl: "/image/store6-2.jpg" },
-  { no: 2, imageUrl: "/image/store6-3.jpg" },
+  { no: 2, imageUrl: "/image/store6-2.jpg" },
+  { no: 3, imageUrl: "/image/store6-3.jpg" },
 ];
 
 interface GroomingMenu {
@@ -28,10 +29,10 @@ interface GroomingMenu {
 const groomingMenu: GroomingMenu[] = [
   { no: 1, name: "기본 목욕 - 소형견 (~5kg)", category: "기본케어", price: 30000 },
   { no: 2, name: "기본 목욕 - 중형견 (~10kg)", category: "기본케어", price: 30000 },
-  { no: 2, name: "기본 목욕 - 대형견 (~10kg)", category: "기본케어", price: 30000 },
-  { no: 2, name: "전체 미용", category: "커트", price: 50000 },
-  { no: 3, name: "스페셜 스파", category: "스파/케어", price: 70000 },
-  { no: 4, name: "부분 미용", category: "커트", price: 40000 },
+  { no: 3, name: "기본 목욕 - 대형견 (~10kg)", category: "기본케어", price: 30000 },
+  { no: 4, name: "전체 미용", category: "커트", price: 50000 },
+  { no: 5, name: "스페셜 스파", category: "스파/케어", price: 70000 },
+  { no: 6, name: "부분 미용", category: "커트", price: 40000 },
 ];
 
 interface Designer {
@@ -106,6 +107,9 @@ const reviewList: Review[] = [
 ];
 
 const StoreInfo: React.FC = () => {
+  const location = useLocation();
+  const navigation = useNavigate();
+  const store = location.state?.store as Store;
   const [selectedTab, setSelectedTab] = useState<string>("홈");
   const [selectedCategory, setSelectedCategory] = useState("전체");
   const [selectedDesigner, setSelectedDesigner] = useState<number | null>(null);
@@ -153,8 +157,8 @@ const StoreInfo: React.FC = () => {
   return (
     <div className="store-info-container">
       <div className="store-title-wrap">
-        <IoIosArrowBack />
-        <p>댕글댕글 강남점</p>
+        <IoIosArrowBack onClick={() => navigation(-1)} />
+        <p>{store.name}</p>
         <FaRegHeart />
       </div>
 
@@ -232,7 +236,7 @@ const StoreInfo: React.FC = () => {
               {/* 메뉴 리스트 */}
               <div>
                 {filteredMenu.map((item) => (
-                  <div key={item.no}>
+                  <div key={item.no} className="menu-price-wrap">
                     <p>{item.name}</p>
                     <p>{item.price.toLocaleString()}원</p>
                   </div>
@@ -302,7 +306,7 @@ const StoreInfo: React.FC = () => {
 
       {/* reservation button */}
       <div className="reservation-btn">
-        <Button text="예약하기" />
+        <Button text="예약하기" onClick={() => navigation("/reservationForm")} />
       </div>
     </div>
   );
