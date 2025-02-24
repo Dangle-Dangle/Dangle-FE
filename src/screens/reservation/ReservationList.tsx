@@ -53,10 +53,10 @@ const ReservationList: React.FC = () => {
 
   return (
     <div className="reservation-list-container">
-      <p className="reservation-title">나의 예약 내역</p>
+      <p className="reservation-list-title">나의 예약 내역</p>
       <div className="store-info-border"></div>
       <div className="count-filter-wrap">
-        <p>총 건</p>
+        <p>총 {reservationList.length}건</p>
         <select>
           <option>기본순</option>
           <option>최신순</option>
@@ -67,7 +67,7 @@ const ReservationList: React.FC = () => {
       <div className="reservation-list-wrap">
         {reservationList.map((reservation) => (
           <div key={reservation.no} className="reservation-box">
-            <div className="reservation-name-status">
+            <div className="reservation-list-name-status">
               <p>{reservation.name}</p>
               {reservation.status === "완료" ? (
                 <FaRegCircleCheck />
