@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/searchAccount/SearchAccount.css";
+import "../../styles/account/SearchAccount.css";
 import Button from "../../components/Button";
 import { useLocation, useNavigate } from "react-router-dom";
 

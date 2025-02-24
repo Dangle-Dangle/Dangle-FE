@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
-import "../../styles/searchAccount/ResetPw.css";
+import "../../styles/account/ResetPw.css";
 
 const ResetPw: React.FC = () => {
   const navigation = useNavigate();

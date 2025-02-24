@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/searchAccount/FoundId.css";
+import "../../styles/account/FoundId.css";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 
