@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
-import "../../styles/searchAccount/FoundPw.css";
+import "../../styles/account/FoundPw.css";
 
 const FoundPw: React.FC = () => {
   const navigation = useNavigate();
