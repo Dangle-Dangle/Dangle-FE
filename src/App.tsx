@@ -16,6 +16,7 @@ import SearchStore from "./screens/store/SearchStore";
 import StoreInfo from "./screens/store/StoreInfo";
 import ReservationList from "./screens/reservation/ReservationList";
 import ReservationDetail from "./screens/reservation/ReservationDetail";
+import ReservationForm from "./screens/reservation/ReservationForm";
 
 const App: React.FC = () => {
   return (
@@ -32,6 +33,7 @@ const App: React.FC = () => {
         <Route path="/storeInfo" element={<StoreInfo />} />
         <Route path="/reservationList" element={<ReservationList />} />
         <Route path="/reservationDetail" element={<ReservationDetail />} />
+        <Route path="/reservationForm" element={<ReservationForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/joinAgree" element={<JoinAgree />} />
         <Route path="/joinForm" element={<JoinForm />} />
