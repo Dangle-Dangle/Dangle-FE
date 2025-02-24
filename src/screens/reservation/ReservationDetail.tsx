@@ -5,6 +5,8 @@ import { Reservation } from "./ReservationList";
 import { getRemainingDays } from "../../utils/remainingDate";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaRegCircleCheck, FaRegCircleXmark } from "react-icons/fa6";
+import { IoHomeOutline } from "react-icons/io5";
+import { FiPhone } from "react-icons/fi";
 
 interface ReservationDetail extends Reservation {
   memberName: string; // 예약자
@@ -74,14 +76,21 @@ const ReservationDetail: React.FC = () => {
       </div>
       <div className="detail-box">
         <div className="reservation-name-status">
-          <p>{reservation.name}</p>
-          {reservation.status === "완료" ? (
-            <FaRegCircleCheck />
-          ) : reservation.status === "대기" ? (
-            <p>D-{getRemainingDays(reservation.date)}</p>
-          ) : (
-            <FaRegCircleXmark />
-          )}
+          <div className="rv-store-about">
+            <p>{reservation.name}</p>
+            <IoHomeOutline />
+            <FiPhone />
+          </div>
+
+          <div>
+            {reservation.status === "완료" ? (
+              <FaRegCircleCheck />
+            ) : reservation.status === "대기" ? (
+              <p>D-{getRemainingDays(reservation.date)}</p>
+            ) : (
+              <FaRegCircleXmark />
+            )}
+          </div>
         </div>
 
         {/* 예약정보 */}
@@ -157,10 +166,11 @@ const ReservationDetail: React.FC = () => {
                     day: "2-digit",
                   })
                   .replace(/\.$/, "")}
-                ({reservationDetail[reservation.no - 1].cancelDate?.toLocaleDateString("ko-KR", {
+                (
+                {reservationDetail[reservation.no - 1].cancelDate?.toLocaleDateString("ko-KR", {
                   weekday: "short",
-                })}){" "}
-                {reservationDetail[reservation.no - 1].cancelDate?.toLocaleTimeString()}
+                })}
+                ) {reservationDetail[reservation.no - 1].cancelDate?.toLocaleTimeString()}
               </p>
             </div>{" "}
             <div className="rv-info-box">
@@ -170,6 +180,14 @@ const ReservationDetail: React.FC = () => {
             <div className="rv-info-box">
               <p>총 취소금액</p>
               <p>{reservationDetail[reservation.no - 1].menuPrice.toLocaleString()}원</p>
+            </div>
+            <div className="rv-cancel-info">
+              <p>• 신용카드 결제 시, 예약 취소 시 자동으로 카드 승인취소 처리됩니다.</p>
+              <p>• 카드사와 VAN사의 확인 절차로 인해 승인취소까지 3~5일(영업일 기준) 소요될 수 있습니다.</p>
+              <p>• 카드사별로 처리 기간이 다를 수 있으므로, 정확한 확인은 카드사로 문의 부탁드립니다.</p>
+              <p>• 체크카드 결제 시, 환불 금액은 회원님의 통장으로 입금됩니다.</p>
+              <p>• 환불 완료까지 최대 5일(영업일 기준) 소요될 수 있습니다.</p>
+              <p>• 카드사별로 환불 기간이 다를 수 있으니, 자세한 사항은 카드사로 문의 바랍니다.</p>
             </div>
           </div>
         ) : null}
