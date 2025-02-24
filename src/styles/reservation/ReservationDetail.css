@@ -8,18 +8,34 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  position: fixed;
+  /* bottom: 90px; */
+  top: 80px;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  width: 100%;
+  min-width: 320px;
+  max-width: 640px;
+  background-color: #fff;
+  height: 50px;
+  line-height: 50px;
+  padding: 0px 15px;
 }
 .reservation-title svg {
   margin: 0;
-  width: 25px;
+  width: 35px;
   height: 100%;
+  cursor: pointer;
+  z-index: 1000;
 }
 .reservation-title p {
   margin: 0px 0px 0px 10px;
+  font-weight: 300;
 }
 
 .detail-box {
-  padding: 0px 35px;
+  padding: 15px 35px;
   margin-top: 15px;
 }
 
@@ -38,11 +54,12 @@
   display: flex;
   flex-direction: row;
   gap: 50px;
-  margin: 15px 0px;
+  margin: 20px 0px;
 }
 .rv-info-box p {
   margin: 0;
 }
 .rv-info-box p:nth-of-type(1) {
   color: #777;
+  width: 90px;
 }
