@@ -23,7 +23,7 @@ const JoinComplete: React.FC = () => {
         <div className="join-complete-box">
           <p>회원가입 완료</p>
           <div className="join-complete-box-text">
-            <p>***님 반갑습니다 😃</p>
+            <p>김수현님 반갑습니다 😃</p>
             <p>댕글댕글의 회원이 되신걸 환영합니다.</p>
           </div>
         </div>

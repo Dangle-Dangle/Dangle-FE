@@ -50,15 +50,20 @@
 .reservation-name-status > div {
   margin: 0;
   font-size: 20px;
+  height: 10px;
 }
 .reservation-name-status svg {
   width: 22px;
-  height: 22px;
-  margin-left: 5px;
+  height: 24px;
+  margin: 0px 0px 0px 5px;
 }
 .rv-store-about {
   display: flex;
   flex-direction: row;
+}
+.rv-store-about > p,
+.rv-detail-status > p {
+  font-size: 18px;
 }
 
 /* 예약정보 */
@@ -81,11 +86,19 @@
   color: #777;
   width: 90px;
 }
-/* 환불정보란 */
+/* 결제정보 */
+.detail-pay-wrap > p {
+  font-weight: 300;
+}
+/* 환불정보 */
 .rv-cancel-info {
   font-size: 12px;
   color: #777;
+  /* margin-top: 40px; */
 }
-.rv-cancel-info > p {
-  padding: 5px 0px;
+
+.detail-info-wrap,
+.detail-pay-wrap,
+.detail-cancel-wrap {
+  margin-top: 40px;
 }

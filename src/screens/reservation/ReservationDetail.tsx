@@ -5,7 +5,7 @@ import { Reservation } from "./ReservationList";
 import { getRemainingDays } from "../../utils/remainingDate";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaRegCircleCheck, FaRegCircleXmark } from "react-icons/fa6";
-import { IoHomeOutline } from "react-icons/io5";
+import { BiHome } from "react-icons/bi";
 import { FiPhone } from "react-icons/fi";
 
 interface ReservationDetail extends Reservation {
@@ -78,11 +78,11 @@ const ReservationDetail: React.FC = () => {
         <div className="reservation-name-status">
           <div className="rv-store-about">
             <p>{reservation.name}</p>
-            <IoHomeOutline />
+            <BiHome />
             <FiPhone />
           </div>
 
-          <div>
+          <div className="rv-detail-status">
             {reservation.status === "완료" ? (
               <FaRegCircleCheck />
             ) : reservation.status === "대기" ? (

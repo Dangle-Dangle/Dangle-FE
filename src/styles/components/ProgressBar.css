@@ -31,7 +31,9 @@
 }
 .circle > svg {
   width: 100%;
-  height: 100%;
+  height: 95%;
+  margin-bottom: 5px;
+  margin-left: 1px;
 }
 
 /* 활성화된 단계 */
@@ -46,8 +48,8 @@
 .progress-step.active .circle::before {
   content: "";
   position: absolute;
-  top: -11px;
-  left: -11px;
+  top: -8px;
+  left: -8px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -69,21 +71,16 @@
   justify-content: space-around;
   width: 100%;
   height: 30px;
-  max-width: 470px;
-  margin-top: 15px;
-  margin-left: 18px;
   text-align: center;
   font-size: 12px;
   color: #777;
+  margin: 10px 0px;
+  gap: 140px;
 }
-.progress-name-container p {
-  width: 200px;
-}
-.progress-name-container p:nth-of-type(1) {
-  text-align: left;
-}
-.progress-name-container p:nth-of-type(3) {
-  text-align: right;
+/* Progress 단계 이름 */
+.progress-name-container > p {
+  width: 100px;
+  margin: 0;
 }
 
 .progress-name-active {

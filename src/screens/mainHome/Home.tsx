@@ -23,6 +23,7 @@ const storeData: Store[] = [
 ];
 
 const Home: React.FC = () => {
+  
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -31,10 +32,13 @@ const Home: React.FC = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    arrows: false,
   };
 
   const storeSliderSettings = {
     ...sliderSettings,
+    arrows: true,
+    dots: false,
     slidesToShow: 2,
     slidesToScroll: 2,
     autoplay: false,

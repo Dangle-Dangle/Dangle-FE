@@ -54,7 +54,7 @@ const JoinAgree: React.FC = () => {
 
     if (uncheckedIndexes.length > 0) {
       const uncheckedTexts = uncheckedIndexes.map((idx) => requiredContents[idx]); // 미동의한 약관 텍스트 가져오기
-      alert(`아래의 필수 약관에 동의해주세요:\n\n✔️ ${uncheckedTexts.join("\n✔️ ")}`);
+      alert(`아래의 필수 약관에 동의해주세요:\n\n• ${uncheckedTexts.join("\n• ")}`);
       return;
     }
 
@@ -74,7 +74,7 @@ const JoinAgree: React.FC = () => {
         <ProgressBar currentStep={1} />
       </div>
 
-      <div style={{ height: "500px" }}>
+      <div>
         {/* 약관 안내 문구 */}
         <div className="join-text-wrap">
           <p className="join-text1">댕글댕글 이용약관</p>
@@ -86,9 +86,9 @@ const JoinAgree: React.FC = () => {
           {/* 전체동의 */}
           <div onClick={handleCheckAll} className="join-agree-all">
             {agreements.all ? (
-              <FaCheckCircle className="icon-agree-all" />
+              <FaCheckCircle className="icon-agree-all" style={{ color: "#EDAFB8" }} />
             ) : (
-              <FaRegCheckCircle className="icon-agree-all" />
+              <FaRegCheckCircle className="icon-agree-all" style={{ color: "#777" }} />
             )}
             <p>모두 동의합니다</p>
           </div>
@@ -100,7 +100,11 @@ const JoinAgree: React.FC = () => {
                 key={`required=${index}`}
                 onClick={() => handleCheck("required", index)}
               >
-                {agreements.required[index] ? <FaCheck style={{ color: "#EDAFB8" }} /> : <FaCheck />}
+                {agreements.required[index] ? (
+                  <FaCheck style={{ color: "#EDAFB8" }} />
+                ) : (
+                  <FaCheck style={{ color: "#777" }} />
+                )}
                 <p>[필수] {text}</p>
               </div>
               <div>
@@ -116,7 +120,11 @@ const JoinAgree: React.FC = () => {
                 key={`optional-${index}`}
                 onClick={() => handleCheck("optional", index)}
               >
-                {agreements.optional[index] ? <FaCheck style={{ color: "#EDAFB8" }} /> : <FaCheck />}
+                {agreements.optional[index] ? (
+                  <FaCheck style={{ color: "#EDAFB8" }} />
+                ) : (
+                  <FaCheck style={{ color: "#777" }} />
+                )}
                 <p>[선택] {text}</p>
               </div>
               <div>
@@ -126,9 +134,6 @@ const JoinAgree: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* 구분선 */}
-      <div className="join-agree-border-line"></div>
 
       {/* 버튼 */}
       <div className="join-agree-button-wrap">
