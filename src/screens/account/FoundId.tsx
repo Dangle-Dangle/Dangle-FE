@@ -10,7 +10,6 @@ const FoundId: React.FC = () => {
     <div className="searchContainer">
       <div>DangleDangle</div>
       <div>아이디 찾기</div>
-      <div className="borderLine"></div>
 
       {/* 아이디 비밀번호 타켓 변경탭 */}
       <div className="targetContainer">

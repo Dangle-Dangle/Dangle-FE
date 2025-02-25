@@ -18,11 +18,11 @@ const Footer: React.FC = () => {
         <Link to={"/searchStore"}>
           <IoSearchSharp className="search" />
         </Link>
-        <BiHeartCircle className="heart" />
+        {/* <BiHeartCircle className="heart" /> */}
         <Link to={"/reservationList"}>
           <FaRegCalendarCheck className="calendar" />
         </Link>
-        <Link to={"/login"}>
+        <Link to="/profile">
           <RiAccountCircleLine className="account" />
         </Link>
       </div>

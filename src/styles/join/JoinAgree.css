@@ -1,11 +1,8 @@
 .join-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fff;
-  font-family: "Suit", sans-serif;
+  width: 100%;
+  margin: 80px 0px 100px 0px;
+  padding: 30px;
+  overflow-y: auto; /* 내부 스크롤 활성화 */
 }
 .join-container input:focus {
   border-color: #a8caba;
@@ -34,12 +31,12 @@
 .join-text1 {
   font-weight: 200;
   font-size: 18px;
-  margin-top: 30px;
+  margin: 3px 14px;
 }
 .join-text2 {
   font-weight: 100;
   font-size: 12px;
-  margin-top: 10px;
+  margin: 0px 14px;
 }
 
 /* 약관 동의란 */
@@ -72,15 +69,17 @@
   margin-bottom: 10px;
 }
 .join-agree-all > .icon-agree-all {
-  width: 25px;
-  height: 25px;
-  margin-left: -4px;
+  margin: 0;
+  width: 17px;
+  height: 17px;
+  margin-right: 2px;
 }
 .join-agree-all > p {
-  margin-left: -310px;
-  color: #000;
-  font-weight: 400;
+  margin: 0;
+  margin-left: 8px;
+  color: black;
   font-size: 15px;
+  padding-top: 2px;
 }
 .agree-check-text {
   display: flex;

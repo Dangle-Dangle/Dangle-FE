@@ -162,9 +162,6 @@ const StoreInfo: React.FC = () => {
         <FaRegHeart />
       </div>
 
-      {/* border */}
-      <div className="store-info-border"></div>
-
       {/* image */}
       <div className="store-image-wrap">
         <Slider {...sliderSettings}>
