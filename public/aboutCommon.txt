@@ -40,7 +40,7 @@
 
 < icon >
 * 지도 : import { LuMapPin } from "react-icons/lu";
-* 시간 : import { LuClock4 } from "react-icons/lu";
+* 시간 : import { import { LuMapPin } from "react-icons/lu"; } from "react-icons/lu";
 * 전화 : import { FiPhone } from "react-icons/fi";
 * 홈 : import { BiHome } from "react-icons/bi";
 * 검색 : import { IoSearchSharp } from "react-icons/io5";

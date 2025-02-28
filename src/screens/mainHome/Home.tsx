@@ -1,115 +1,129 @@
 import React from "react";
 import "../../styles/mainHome/Home.css";
-import Slider from "react-slick";
+import Slider from "../../components/Slider";
+import CardSlider from "../../components/CardSlider";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-interface Store {
+interface EventBanner {
   no: number;
-  name: string;
-  location: string;
   imageUrl: string;
+}
+const eventImage: EventBanner[] = [
+  { no: 1, imageUrl: "/image/slide5.jpg" },
+  { no: 2, imageUrl: "/image/slide2.jpg" },
+  { no: 3, imageUrl: "/image/slide3.jpg" },
+  { no: 4, imageUrl: "/image/slide4.jpg" },
+  { no: 5, imageUrl: "/image/slide1.jpg" },
+  { no: 6, imageUrl: "/image/slide6.jpg" },
+];
+
+interface Store {
+  no: number; // 매장번호
+  name: string; // 매장이름
+  location: string; // 매장위치
+  openTime: `${number}:${number}`; // 매장오픈시간
+  closeTime: `${number}:${number}`; // 매장마감시간
+  dayOff: string; // 매장휴무일
+  imageUrl: string; // 매장이미지
 }
 
 const storeData: Store[] = [
-  { no: 1, name: "멍멍 펫미용 1호점", location: "동대문구청 2번출구 도보 3분 거리", imageUrl: "/image/store5-2.jpg" },
-  { no: 2, name: "멍멍 펫미용 2호점", location: "강남역 4번출구 도보 5분 거리", imageUrl: "/image/store6-2.jpg" },
-  { no: 3, name: "멍멍 펫미용 3호점", location: "홍대입구역 1번출구 도보 7분 거리", imageUrl: "/image/store7-2.jpg" },
-  { no: 4, name: "멍멍 펫미용 3호점", location: "홍대입구역 1번출구 도보 7분 거리", imageUrl: "/image/store8-2.jpg" },
-  { no: 5, name: "멍멍 펫미용 3호점", location: "홍대입구역 1번출구 도보 7분 거리", imageUrl: "/image/store9-2.jpg" },
-  { no: 6, name: "멍멍 펫미용 3호점", location: "홍대입구역 1번출구 도보 7분 거리", imageUrl: "/image/store10-2.jpg" },
-  { no: 7, name: "멍멍 펫미용 3호점", location: "홍대입구역 1번출구 도보 7분 거리", imageUrl: "/image/store8-3.jpg" },
-  { no: 8, name: "멍멍 펫미용 3호점", location: "홍대입구역 1번출구 도보 7분 거리", imageUrl: "/image/store9-3.jpg" },
+  {
+    no: 1,
+    name: "포동이네",
+    location: "서울 강남구 역삼동",
+    openTime: "10:00",
+    closeTime: "19:00",
+    dayOff: "화,수",
+    imageUrl: "/image/store5-2.jpg",
+  },
+  {
+    no: 2,
+    name: "포근하개",
+    location: "서울 송파구 가락동",
+    openTime: "09:30",
+    closeTime: "18:30",
+    dayOff: "월",
+    imageUrl: "/image/store6-2.jpg",
+  },
+  {
+    no: 3,
+    name: "예뿌다개",
+    location: "서울 마포구 상수동",
+    openTime: "08:30",
+    closeTime: "17:30",
+    dayOff: "수",
+    imageUrl: "/image/store7-2.jpg",
+  },
+  {
+    no: 4,
+    name: "몽이네",
+    location: "서울 종로구 청운동",
+    openTime: "11:00",
+    closeTime: "20:00",
+    dayOff: "목",
+    imageUrl: "/image/store8-2.jpg",
+  },
+  {
+    no: 5,
+    name: "쥬쥬샬롱",
+    location: "서울 동대문구 회기동",
+    openTime: "09:00",
+    closeTime: "18:00",
+    dayOff: "일",
+    imageUrl: "/image/store9-2.jpg",
+  },
+  {
+    no: 6,
+    name: "푸들푸들",
+    location: "서울 용산구 이촌동",
+    openTime: "10:30",
+    closeTime: "19:30",
+    dayOff: "월",
+    imageUrl: "/image/store10-2.jpg",
+  },
+  {
+    no: 7,
+    name: "소중하개",
+    location: "서울 강북구 미아동",
+    openTime: "09:00",
+    closeTime: "18:00",
+    dayOff: "화,목",
+    imageUrl: "/image/store8-3.jpg",
+  },
+  {
+    no: 8,
+    name: "애니살롱",
+    location: "서울 강서구 등촌동",
+    openTime: "10:00",
+    closeTime: "19:00",
+    dayOff: "금,토",
+    imageUrl: "/image/store9-3.jpg",
+  },
 ];
 
 const Home: React.FC = () => {
-  
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    arrows: false,
-  };
-
-  const storeSliderSettings = {
-    ...sliderSettings,
-    arrows: true,
-    dots: false,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    autoplay: false,
-  };
-
   return (
     <div className="main-home-container">
       {/* 이벤트 배너 */}
       <div className="home-slider-container">
-        <Slider {...sliderSettings}>
-          <div>
-            <img src="./image/slide5.jpg" alt="강아지5" />
-          </div>
-          <div>
-            <img src="./image/slide2.jpg" alt="강아지2" />
-          </div>
-          <div>
-            <img src="./image/slide3.jpg" alt="강아지3" />
-          </div>
-          <div>
-            <img src="./image/slide4.jpg" alt="강아지4" />
-          </div>
-          <div>
-            <img src="./image/slide1.jpg" alt="강아지1" />
-          </div>
-          <div>
-            <img src="./image/slide6.jpg" alt="강아지6" />
-          </div>
-        </Slider>
+        <Slider eventImage={eventImage} />
       </div>
-
       {/* 신규오픈매장 */}
       <div className="store-slider-container">
         <p>신규 오픈 매장</p>
-        <Slider {...storeSliderSettings}>
-          {storeData.map((store) => (
-            <div key={store.no} className="store-card">
-              <img src={store.imageUrl} alt={store.name} />
-              <p>{store.name}</p>
-              <p>{store.location}</p>
-            </div>
-          ))}
-        </Slider>
+        <CardSlider storeData={storeData} />
       </div>
-
       {/* 당일예약 가능한 매장 */}
       <div className="store-slider-container store-gap">
         <p>당일예약 가능한 매장</p>
-        <Slider {...storeSliderSettings}>
-          {storeData.map((store) => (
-            <div key={store.no} className="store-card">
-              <img src={store.imageUrl} alt={store.name} />
-              <p>{store.name}</p>
-              <p>{store.location}</p>
-            </div>
-          ))}
-        </Slider>
+        <CardSlider storeData={storeData} />
       </div>
-
       {/* 재예약 많은 매장 */}
       <div className="store-slider-container store-gap">
         <p>재예약 많은 매장</p>
-        <Slider {...storeSliderSettings}>
-          {storeData.map((store) => (
-            <div key={store.no} className="store-card">
-              <img src={store.imageUrl} alt={store.name} />
-              <p>{store.name}</p>
-              <p>{store.location}</p>
-            </div>
-          ))}
-        </Slider>
+        <CardSlider storeData={storeData} />
       </div>
     </div>
   );

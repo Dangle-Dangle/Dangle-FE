@@ -82,6 +82,7 @@
   margin-bottom: 10px;
   font-size: 12px;
   font-weight: 100;
+  margin-left: 10px;
 }
 .searchWrap input:focus {
   outline: none;
@@ -125,6 +126,7 @@
 }
 .phoneContainer > p {
   margin: 0px 0px 0px 2px;
+  margin-left: 12px;
 }
 
 .phoneContainer > div:nth-of-type(2) {
