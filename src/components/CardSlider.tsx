@@ -2,10 +2,15 @@ import React from "react";
 import "../styles/components/CardSlider.css";
 import Carousel from "react-bootstrap/Carousel";
 import { LuMapPin, LuClock4 } from "react-icons/lu";
+import { FaStar } from "react-icons/fa";
+import { formatWithCommas } from "../utils/formatWithCommas";
+import { IoIosArrowForward } from "react-icons/io";
 
 interface StoreImage {
   no: number; // 매장번호
   name: string; // 매장이름
+  ratingAvg: number; // 리뷰평점
+  reviewCount: number; // 리뷰개수
   location: string; // 매장위치
   openTime: `${number}:${number}`; // 매장오픈시간
   closeTime: `${number}:${number}`; // 매장마감시간
@@ -36,7 +41,12 @@ const Slider: React.FC<SliderProps> = ({ storeData }) => {
               {group.map((store) => (
                 <div className="card" key={store.no}>
                   <p className="card-title">{store.name}</p>
-                  <div className="card-star-review"></div>
+                  <div className="card-star-review">
+                    <FaStar />
+                    <p>{store.ratingAvg}</p>
+                    <p>리뷰 {formatWithCommas(store.reviewCount)}개</p>
+                    <IoIosArrowForward />
+                  </div>
                   <img className="card-img w-100" src={store.imageUrl} alt={`Store Image ${store.no}`} />
                   <div className="card-store-map">
                     <LuMapPin />
@@ -45,7 +55,7 @@ const Slider: React.FC<SliderProps> = ({ storeData }) => {
                   <div className="card-store-time">
                     <LuClock4 />
                     <p className="card-store-time-text">
-                      영업시간 : {store.openTime} ~ {store.closeTime} (매주 {store.dayOff}요일 휴무)
+                      영업시간 : {store.openTime}~{store.closeTime} (매주 {store.dayOff}요일 휴무)
                     </p>
                   </div>
                 </div>
