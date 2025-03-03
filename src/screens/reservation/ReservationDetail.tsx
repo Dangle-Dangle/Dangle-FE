@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { FaRegCircleCheck, FaRegCircleXmark } from "react-icons/fa6";
 import { BiHome } from "react-icons/bi";
 import { FiPhone } from "react-icons/fi";
+import { formatWithCommas } from "../../utils/formatWithCommas";
 
 interface ReservationDetail extends Reservation {
   memberName: string; // 예약자
@@ -139,11 +140,11 @@ const ReservationDetail: React.FC = () => {
           <div className="detail-border"></div>
           <div className="rv-info-box">
             <p>메뉴가격</p>
-            <p>{reservationDetail[reservation.no - 1].menuPrice.toLocaleString()}원</p>
+            <p>{formatWithCommas(reservationDetail[reservation.no - 1].menuPrice)}원</p>
           </div>
           <div className="rv-info-box">
             <p>총 결제 금액</p>
-            <p>{reservationDetail[reservation.no - 1].totalPrice.toLocaleString()}원</p>
+            <p>{formatWithCommas(reservationDetail[reservation.no - 1].totalPrice)}원</p>
           </div>
           <div className="rv-info-box">
             <p>결제방식</p>
@@ -175,11 +176,11 @@ const ReservationDetail: React.FC = () => {
             </div>{" "}
             <div className="rv-info-box">
               <p>취소수수료</p>
-              <p>{reservationDetail[reservation.no - 1].cancelCharge}원</p>
+              <p>{formatWithCommas(reservationDetail[reservation.no - 1].cancelCharge)}원</p>
             </div>
             <div className="rv-info-box">
               <p>총 취소금액</p>
-              <p>{reservationDetail[reservation.no - 1].menuPrice.toLocaleString()}원</p>
+              <p>{formatWithCommas(reservationDetail[reservation.no - 1].menuPrice)}원</p>
             </div>
             <div className="rv-cancel-info">
               <p>• 신용카드 결제 시, 예약 취소 시 자동으로 카드 승인취소 처리됩니다.</p>

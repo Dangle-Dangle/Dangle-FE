@@ -48,6 +48,7 @@
 * 계정 : import { RiAccountCircleLine } from "react-icons/ri";
 
 * 뒤로가기 : import { IoIosArrowBack } from "react-icons/io";
+* 앞으로가기(or 들어가기) : import { IoIosArrowForward } from "react-icons/io";
 * 저장(하트) : import { FaRegHeart } from "react-icons/fa6";
 * 원형체크O : import { FaRegCheckCircle, FaRegCircle } from "react-icons/fa";
 * 원형체크X : import { FaRegCircle } from "react-icons/fa";
@@ -63,3 +64,7 @@
 
 < font-size >
 페이지마다의 헤더 > font-size: 20px
+
+---------------------------------------------------------------
+< color >
+* 리뷰별 : #ffb703;

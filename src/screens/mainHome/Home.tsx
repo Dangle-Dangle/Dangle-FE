@@ -21,6 +21,8 @@ const eventImage: EventBanner[] = [
 interface Store {
   no: number; // 매장번호
   name: string; // 매장이름
+  ratingAvg: number; // 리뷰평점
+  reviewCount: number; // 리뷰개수
   location: string; // 매장위치
   openTime: `${number}:${number}`; // 매장오픈시간
   closeTime: `${number}:${number}`; // 매장마감시간
@@ -32,6 +34,8 @@ const storeData: Store[] = [
   {
     no: 1,
     name: "포동이네",
+    ratingAvg: 4.5,
+    reviewCount: 1898,
     location: "서울 강남구 역삼동",
     openTime: "10:00",
     closeTime: "19:00",
@@ -41,6 +45,8 @@ const storeData: Store[] = [
   {
     no: 2,
     name: "포근하개",
+    ratingAvg: 4.3,
+    reviewCount: 28,
     location: "서울 송파구 가락동",
     openTime: "09:30",
     closeTime: "18:30",
@@ -50,6 +56,8 @@ const storeData: Store[] = [
   {
     no: 3,
     name: "예뿌다개",
+    ratingAvg: 4.8,
+    reviewCount: 2491,
     location: "서울 마포구 상수동",
     openTime: "08:30",
     closeTime: "17:30",
@@ -59,6 +67,8 @@ const storeData: Store[] = [
   {
     no: 4,
     name: "몽이네",
+    ratingAvg: 4.9,
+    reviewCount: 8798,
     location: "서울 종로구 청운동",
     openTime: "11:00",
     closeTime: "20:00",
@@ -68,6 +78,8 @@ const storeData: Store[] = [
   {
     no: 5,
     name: "쥬쥬샬롱",
+    ratingAvg: 4.3,
+    reviewCount: 788,
     location: "서울 동대문구 회기동",
     openTime: "09:00",
     closeTime: "18:00",
@@ -77,6 +89,8 @@ const storeData: Store[] = [
   {
     no: 6,
     name: "푸들푸들",
+    ratingAvg: 4.9,
+    reviewCount: 2828,
     location: "서울 용산구 이촌동",
     openTime: "10:30",
     closeTime: "19:30",
@@ -86,6 +100,8 @@ const storeData: Store[] = [
   {
     no: 7,
     name: "소중하개",
+    ratingAvg: 4.5,
+    reviewCount: 1898,
     location: "서울 강북구 미아동",
     openTime: "09:00",
     closeTime: "18:00",
@@ -95,6 +111,8 @@ const storeData: Store[] = [
   {
     no: 8,
     name: "애니살롱",
+    ratingAvg: 5.0,
+    reviewCount: 18278,
     location: "서울 강서구 등촌동",
     openTime: "10:00",
     closeTime: "19:00",
