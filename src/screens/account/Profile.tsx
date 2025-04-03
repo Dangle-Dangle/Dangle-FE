@@ -5,7 +5,6 @@ import { PiHeartFill } from "react-icons/pi";
 import { FaRegFaceSmile } from "react-icons/fa6";
 import { PiUserCircleLight } from "react-icons/pi";
 import Accordion from "react-bootstrap/Accordion";
-import { useNavigate } from "react-router-dom";
 
 interface ProfileLogProps {
   isLogin: boolean;
@@ -13,7 +12,6 @@ interface ProfileLogProps {
 }
 
 const Profile: React.FC<ProfileLogProps> = ({ isLogin, setIsLogin }) => {
-  const navigation = useNavigate();
   const handleLogState = () => {
     setIsLogin((prev) => !prev);
   };

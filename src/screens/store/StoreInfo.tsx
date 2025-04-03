@@ -3,7 +3,7 @@ import "../../styles/store/StoreInfo.css";
 import Slider from "../../components/Slider";
 import { IoIosArrowBack } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
-import { FaRegCheckCircle, FaRegCircle, FaStar, FaStarHalf, FaRegStar } from "react-icons/fa";
+import { FaRegCheckCircle, FaRegCircle } from "react-icons/fa";
 import Button from "../../components/Button";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Store } from "./SearchStore";

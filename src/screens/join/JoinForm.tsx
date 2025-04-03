@@ -42,7 +42,6 @@ const JoinForm: React.FC = () => {
   // 이메일 상태관리
   const [emailLocal, setEmailLocal] = useState("");
   const [emailDomain, setEmailDomain] = useState("");
-  const [isCustomEmail, setIsCustomEmail] = useState(true); // 직접입력 유무
 
   // 주소 상태관리
   const [addressMain, setAddressMain] = useState("");
@@ -80,14 +79,12 @@ const JoinForm: React.FC = () => {
   const handleEmailSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedDomain = e.target.value;
     if (selectedDomain === "custom") {
-      setIsCustomEmail(true);
       setEmailDomain(""); // 사용자 입력을 위해 emailDomain 초기화
       setAccountVO((prevState) => ({
         ...prevState,
         userEmail: `${emailLocal}@`, // @뒤는 비워두기
       }));
     } else {
-      setIsCustomEmail(false);
       setEmailDomain(selectedDomain);
       setAccountVO((prevState) => ({
         ...prevState,
