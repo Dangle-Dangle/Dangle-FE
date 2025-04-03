@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/common/Footer.css";
 import { BiHome } from "react-icons/bi";
 import { IoSearchSharp } from "react-icons/io5";
-import { BiHeartCircle } from "react-icons/bi";
 import { FaRegCalendarCheck } from "react-icons/fa6";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { Link } from "react-router-dom";

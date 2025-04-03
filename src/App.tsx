@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SearchAccount from "./screens/account/SearchAccount";
@@ -19,9 +19,10 @@ import ReservationList from "./screens/reservation/ReservationList";
 import ReservationDetail from "./screens/reservation/ReservationDetail";
 import ReservationForm from "./screens/reservation/ReservationForm";
 import Profile from "./screens/account/Profile";
+import ReservationPayment from "./screens/reservation/ReservationPayment";
 
 const App: React.FC = () => {
-  const [isLogin, setIsLogin] = useState<boolean>(true);
+  const [isLogin, setIsLogin] = useState(false);
   return (
     <div className="App">
       <Header />
@@ -37,6 +38,7 @@ const App: React.FC = () => {
         <Route path="/reservationList" element={<ReservationList />} />
         <Route path="/reservationDetail" element={<ReservationDetail />} />
         <Route path="/reservationForm" element={<ReservationForm />} />
+        <Route path="/reservationPayment" element={<ReservationPayment />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile isLogin={isLogin} setIsLogin={setIsLogin} />} />
         <Route path="/joinAgree" element={<JoinAgree />} />
