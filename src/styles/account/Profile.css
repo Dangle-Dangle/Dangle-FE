@@ -108,6 +108,7 @@
 }
 
 /* 회원정보 수정 */
-.edit-profile-btn {
+.edit-profile-tab,
+.delete-account-tab {
   cursor: pointer;
 }

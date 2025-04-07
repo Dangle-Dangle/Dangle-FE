@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SearchAccount from "./screens/account/SearchAccount";
@@ -22,9 +22,15 @@ import Profile from "./screens/account/Profile";
 import ReservationPayment from "./screens/reservation/ReservationPayment";
 import ConfirmEdit from "./screens/account/ConfirmEdit";
 import EditProfile from "./screens/account/EditProfile";
+import DeleteAccount from "./screens/account/deleteAccount";
 
 const App: React.FC = () => {
+  const location = useLocation();
   const [isLogin, setIsLogin] = useState(false);
+
+  // Footer를 숨길 경로 list
+  const hideFooterRoutes = ["/deleteAccount"];
+
   return (
     <div className="App">
       <Header />
@@ -48,9 +54,10 @@ const App: React.FC = () => {
         <Route path="/joinComplete" element={<JoinComplete />} />
         <Route path="/confirmEdit" element={<ConfirmEdit />} />
         <Route path="/editProfile" element={<EditProfile />} />
+        <Route path="/deleteAccount" element={<DeleteAccount />} />
       </Routes>
 
-      <Footer />
+      {!hideFooterRoutes.includes(location.pathname) && <Footer />}
     </div>
   );
 };
