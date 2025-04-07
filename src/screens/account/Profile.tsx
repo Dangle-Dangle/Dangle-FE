@@ -5,6 +5,7 @@ import { PiHeartFill } from "react-icons/pi";
 import { FaRegFaceSmile } from "react-icons/fa6";
 import { PiUserCircleLight } from "react-icons/pi";
 import Accordion from "react-bootstrap/Accordion";
+import { useNavigate } from "react-router-dom";
 
 interface ProfileLogProps {
   isLogin: boolean;
@@ -12,17 +13,13 @@ interface ProfileLogProps {
 }
 
 const Profile: React.FC<ProfileLogProps> = ({ isLogin, setIsLogin }) => {
+  const navigation = useNavigate();
   const handleLogState = () => {
     setIsLogin((prev) => !prev);
   };
 
   useEffect(() => {
     console.log("현재 로그인 상태:", isLogin);
-
-    // if (!isLogin) {
-    //   navigation("/login");
-    // }
-    // }, [isLogin, navigation]);
   }, [isLogin]);
 
   return (
@@ -71,8 +68,7 @@ const Profile: React.FC<ProfileLogProps> = ({ isLogin, setIsLogin }) => {
       <Accordion defaultActiveKey="0" className="custom-accordion-profile">
         <Accordion.Item eventKey="0">
           <Accordion.Header>내 계정</Accordion.Header>
-          <Accordion.Body>회원정보 수정</Accordion.Body>
-          <Accordion.Body>비밀번호 변경</Accordion.Body>
+          <Accordion.Body className="edit-profile-btn" onClick={() => navigation("/confirmEdit")}>회원정보 수정</Accordion.Body>
           <Accordion.Body>저장한 매장</Accordion.Body>
           <Accordion.Body>리뷰 관리</Accordion.Body>
         </Accordion.Item>

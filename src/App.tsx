@@ -20,6 +20,8 @@ import ReservationDetail from "./screens/reservation/ReservationDetail";
 import ReservationForm from "./screens/reservation/ReservationForm";
 import Profile from "./screens/account/Profile";
 import ReservationPayment from "./screens/reservation/ReservationPayment";
+import ConfirmEdit from "./screens/account/ConfirmEdit";
+import EditProfile from "./screens/account/EditProfile";
 
 const App: React.FC = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -44,6 +46,8 @@ const App: React.FC = () => {
         <Route path="/joinAgree" element={<JoinAgree />} />
         <Route path="/joinForm" element={<JoinForm />} />
         <Route path="/joinComplete" element={<JoinComplete />} />
+        <Route path="/confirmEdit" element={<ConfirmEdit />} />
+        <Route path="/editProfile" element={<EditProfile />} />
       </Routes>
 
       <Footer />
