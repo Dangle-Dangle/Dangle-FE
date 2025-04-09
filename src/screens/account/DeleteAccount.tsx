@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../../styles/account/deleteAccount.css";
+import "../../styles/account/DeleteAccount.css";
 import { MdOutlineCheckBox, MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import Button from "../../components/Button";
-import DeleteAccountConfirm from "./deleteAccountConfirm";
+import DeleteAccountConfirm from "./DeleteAccountConfirm";
 
 const DeleteAccount: React.FC = () => {
   const [showConfirm, setShowConfirm] = useState<boolean>(false); // 탈퇴재확인 팝업창

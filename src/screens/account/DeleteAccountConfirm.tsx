@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/account/deleteAccount.css";
+import "../../styles/account/DeleteAccount.css";
 import { BsEmojiTear } from "react-icons/bs";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
