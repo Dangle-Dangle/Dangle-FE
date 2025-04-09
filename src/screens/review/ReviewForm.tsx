@@ -4,12 +4,13 @@ import { IoIosArrowBack } from "react-icons/io";
 import { MdOutlineAddAPhoto } from "react-icons/md";
 import { MdOutlineCancel } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { renderStars } from "../../utils/renderStars";
 import Button from "../../components/Button";
+import StarSelector from "../../components/StarSelector";
 
 const ReviewForm: React.FC = () => {
   const navigation = useNavigate();
   const [reviewContent, setReviewContent] = useState<string>("");
+  const [rating, setRating] = useState<number>(0);
 
   // 리뷰내용 작성
   const handleReviewWrite = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -30,8 +31,8 @@ const ReviewForm: React.FC = () => {
       <div className="review-form-wrap">
         <p>멍멍 펫미용 1호점</p>
         <div className="review-form-count">
-          <p>별점(4/5)</p>
-          <div>{renderStars(4)}</div>
+          <p>별점 ({rating}/5)</p>
+          <StarSelector rating={rating} onChange={setRating} />
         </div>
         <div className="review-form-img">
           <p>리뷰 이미지 (1/5)</p>

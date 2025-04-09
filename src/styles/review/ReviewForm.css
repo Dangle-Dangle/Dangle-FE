@@ -59,15 +59,18 @@
   flex-direction: column;
   gap: 10px;
 }
-.review-form-count > div {
+.review-form-count div {
+  width: 100%;
+  display: flex;
+}
+.review-form-count > div > div {
   margin: 0;
   color: #ffb703;
-}
-.review-form-count > div svg {
   width: 30px;
   height: 30px;
-  margin-right: 5px;
+  cursor: pointer;
 }
+
 /* 이미지 */
 .review-form-img {
   margin: 0;
