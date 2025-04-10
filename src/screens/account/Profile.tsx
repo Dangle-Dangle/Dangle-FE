@@ -72,7 +72,9 @@ const Profile: React.FC<ProfileLogProps> = ({ isLogin, setIsLogin }) => {
             회원정보 수정
           </Accordion.Body>
           <Accordion.Body>저장한 매장</Accordion.Body>
-          <Accordion.Body>리뷰 관리</Accordion.Body>
+          <Accordion.Body className="myReview-list-tab" onClick={() => navigation("/reviewList")}>
+            리뷰 관리
+          </Accordion.Body>
           <Accordion.Body className="delete-account-tab" onClick={() => navigation("/deleteAccount")}>
             회원 탈퇴
           </Accordion.Body>
