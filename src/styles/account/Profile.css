@@ -109,6 +109,7 @@
 
 /* 회원정보 수정 */
 .edit-profile-tab,
-.delete-account-tab {
+.delete-account-tab,
+.myReview-list-tab {
   cursor: pointer;
 }

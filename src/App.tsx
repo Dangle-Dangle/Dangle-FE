@@ -24,6 +24,7 @@ import ConfirmEdit from "./screens/account/ConfirmEdit";
 import EditProfile from "./screens/account/EditProfile";
 import DeleteAccount from "./screens/account/DeleteAccount";
 import ReviewForm from "./screens/review/ReviewForm";
+import ReviewList from "./screens/review/ReviewList";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -57,6 +58,7 @@ const App: React.FC = () => {
         <Route path="/editProfile" element={<EditProfile />} />
         <Route path="/deleteAccount" element={<DeleteAccount />} />
         <Route path="/reviewForm" element={<ReviewForm />} />
+        <Route path="/reviewList" element={<ReviewList />} />
       </Routes>
 
       {!hideFooterRoutes.includes(location.pathname) && <Footer />}
